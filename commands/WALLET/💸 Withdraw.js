@@ -55,7 +55,7 @@ if (!method || !method.enabled) {
         }
       ]
     ],
-    "🔴 *WITHDRAWALS UNAVAILABLE*\n\n" +
+    "🔴 WITHDRAWALS UNAVAILABLE\n━━━━━━━━━━━━━━\n\n" +
     "Withdrawals are currently disabled."
   );
   return;
