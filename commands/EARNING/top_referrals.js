@@ -36,7 +36,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -63,7 +63,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "🔴 *REFER & EARN UNAVAILABLE*\n\n" +
+    "🔴 REFER & EARN UNAVAILABLE\n\n" +
     "The referral system is currently disabled."
   );
 
@@ -360,7 +360,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🏆 TOP REFERRALS\n\n" +
+  "🏆 REFERRAL LEADERBOARD\n━━━━━━━━━━━━━━\n\n" +
 
   leaderboardText +
 
