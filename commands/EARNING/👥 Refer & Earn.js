@@ -74,7 +74,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "👥 *REFER & EARN*\n\n" +
+    "👥 REFER & EARN\n\n" +
     "🔴 Refer & Earn is currently unavailable."
   );
 
@@ -202,9 +202,9 @@ Bot.sendInlineKeyboard(
   ]
 ],
 
-  "👥 *REFER & EARN*\n\n" +
+  "👥 REFER & EARN\n\n" +
 
-  "Invite friends and earn `" +
+  "Invite friends, grow the community and earn rewards for every verified referral.\\n\\n🎁 Reward per successful referral: ` +
   symbol +
   reward.toFixed(decimals) +
   " " +
