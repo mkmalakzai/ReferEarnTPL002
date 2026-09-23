@@ -192,7 +192,7 @@ var buttons = [
   [
     { title: "📡 Force Join", command: "admin_forcejoin" },
     { title: "🧾 Admin Logs", command: "admin_logs" }
-  ],
+  ]
 ];
 
 
