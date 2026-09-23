@@ -92,6 +92,6 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "*" + title + "*\n\n" +
+  title + "\n━━━━━━━━━━━━━━\n\n" +
   text
 );
