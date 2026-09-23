@@ -30,9 +30,9 @@ if (!channels || channels.length == 0) {
 }
 
 var text =
-  "🔐 *JOIN REQUIRED*\n\n" +
-  "To continue using the bot, please join all required channels below.\n\n" +
-  "After joining, tap *✅ Check Joined*.";
+  "🔐 MEMBERSHIP REQUIRED\n\n" +
+  "Join all official channels below to unlock earning features and continue securely.\n\n" +
+  "When finished, tap ✅ Check Joined.";
 
 var buttons = [];
 
