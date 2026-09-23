@@ -27,7 +27,15 @@ CMD*/
 
 var ownerId = Bot.getProperty("owner_id");
 
-if (!ownerId || user.telegramid != ownerId) {
+var hasAdminAccess = (user.telegramid == ownerId);
+if (!hasAdminAccess) {
+  var admins = Bot.getProperty("bot_admins") || [];
+  for (var ai = 0; ai < admins.length; ai++) {
+    if (admins[ai].user_id == user.telegramid) { hasAdminAccess = true; break; }
+  }
+}
+
+if (!ownerId || !hasAdminAccess) {
   Bot.sendMessage("⛔ ACCESS DENIED");
   return;
 }
