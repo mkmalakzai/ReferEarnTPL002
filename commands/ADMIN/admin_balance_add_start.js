@@ -1,0 +1,63 @@
+/*CMD
+  command: admin_balance_add_start
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: ADMIN
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
+/* =========================================================
+   ADMIN — ADD BALANCE START
+   ========================================================= */
+
+var ownerId = Bot.getProperty("owner_id");
+
+if (!ownerId || user.telegramid != ownerId) {
+  Bot.sendMessage("⛔ ACCESS DENIED");
+  return;
+}
+
+var targetId = parseInt(params);
+
+if (isNaN(targetId) || targetId <= 0) {
+  Bot.sendMessage("❌ Invalid User ID.");
+  return;
+}
+
+Bot.setProperty(
+  "admin_balance_target_" + user.telegramid,
+  targetId,
+  "integer"
+);
+
+Bot.setProperty(
+  "admin_balance_action_" + user.telegramid,
+  "add",
+  "string"
+);
+
+Bot.sendInlineKeyboard(
+  [
+    [
+      {
+        title: "❌ Cancel",
+        command: "admin_user_view " + targetId
+      }
+    ]
+  ],
+  "➕ *ADD BALANCE*\n\n" +
+  "User ID: `" + targetId + "`\n\n" +
+  "Send the amount you want to add."
+);
+
+Bot.runCommand("admin_balance_amount");

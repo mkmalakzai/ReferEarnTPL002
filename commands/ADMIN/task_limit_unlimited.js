@@ -1,0 +1,48 @@
+/*CMD
+  command: task_limit_unlimited
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: ADMIN
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
+/* =========================================================
+   TPL-002
+   FOLDER: ADMIN
+   COMMAND: task_limit_unlimited
+   ========================================================= */
+
+var ownerId = Bot.getProperty("owner_id");
+
+if (!ownerId || user.telegramid != ownerId) {
+  return;
+}
+
+var draft = User.getProperty("task_draft");
+
+if (!draft) {
+  Bot.sendMessage("⚠️ Task draft expired.");
+  return;
+}
+
+draft.total_limit = 0;
+draft.per_user_limit = 1;
+draft.completed_count = 0;
+
+User.setProperty(
+  "task_draft",
+  draft,
+  "json"
+);
+
+Bot.runCommand("task_preview");

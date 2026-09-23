@@ -1,0 +1,432 @@
+/*CMD
+  command: admin_withdraw_approve
+  help: 
+  need_reply: false
+  auto_retry_time: 
+  folder: ADMIN
+
+  <<ANSWER
+
+  ANSWER
+
+  <<KEYBOARD
+
+  KEYBOARD
+  aliases: 
+  group: 
+CMD*/
+
+/* =========================================================
+   TPL-002 — APPROVE WITHDRAWAL
+   FOLDER: ADMIN
+   COMMAND: admin_withdraw_approve
+   ========================================================= */
+
+
+/* ---------- ACCESS ---------- */
+
+var ownerId =
+  Bot.getProperty("owner_id");
+
+if (
+  !ownerId ||
+  user.telegramid != ownerId
+) {
+
+  Bot.sendMessage(
+    "⛔ ACCESS DENIED"
+  );
+
+  return;
+}
+
+
+/* ---------- REQUEST ID ---------- */
+
+var withdrawId = params;
+
+if (!withdrawId) {
+
+  Bot.sendInlineKeyboard(
+    [
+      [
+        {
+          title: "📥 Pending Requests",
+          command: "admin_withdrawals"
+        }
+      ]
+    ],
+
+    "⚠️ *WITHDRAWAL ID NOT RECEIVED*"
+  );
+
+  return;
+}
+
+withdrawId =
+  withdrawId.trim();
+
+
+/* ---------- LOAD REQUESTS ---------- */
+
+var requests =
+  Bot.getProperty(
+    "withdraw_requests"
+  ) || [];
+
+var request = null;
+var requestIndex = -1;
+
+
+/* ---------- FIND REQUEST ---------- */
+
+for (
+  var i = 0;
+  i < requests.length;
+  i++
+) {
+
+  if (
+    requests[i].id ==
+    withdrawId
+  ) {
+
+    request =
+      requests[i];
+
+    requestIndex =
+      i;
+
+    break;
+  }
+}
+
+
+/* ---------- NOT FOUND ---------- */
+
+if (!request) {
+
+  Bot.sendInlineKeyboard(
+    [
+      [
+        {
+          title: "📥 Pending Requests",
+          command: "admin_withdrawals"
+        }
+      ]
+    ],
+
+    "⚠️ *WITHDRAWAL NOT FOUND*\n\n" +
+    "ID: `" +
+    withdrawId +
+    "`"
+  );
+
+  return;
+}
+
+
+/* =========================================================
+   DOUBLE APPROVE / REJECT PROTECTION
+   ========================================================= */
+
+if (
+  request.status !=
+  "pending"
+) {
+
+  Bot.sendInlineKeyboard(
+    [
+      [
+        {
+          title: "📥 Pending Requests",
+          command: "admin_withdrawals"
+        }
+      ]
+    ],
+
+    "⚠️ *REQUEST ALREADY REVIEWED*\n\n" +
+
+    "ID: `" +
+    request.id +
+    "`\n" +
+
+    "Status: `" +
+    request.status.toUpperCase() +
+    "`"
+  );
+
+  return;
+}
+
+
+/* =========================================================
+   MARK APPROVED
+   ========================================================= */
+
+request.status =
+  "approved";
+
+request.reviewed_at =
+  Date.now();
+
+request.reviewed_by =
+  user.telegramid;
+
+requests[requestIndex] =
+  request;
+
+
+/* ---------- SAVE STATUS ---------- */
+
+Bot.setProperty(
+  "withdraw_requests",
+  requests,
+  "json"
+);
+
+
+/* =========================================================
+   TOTAL WITHDRAWN
+   Actual payout only
+   ========================================================= */
+
+var totalWithdrawn =
+  Libs.ResourcesLib.anotherUserRes(
+    "total_withdrawn",
+    request.user_id
+  );
+
+totalWithdrawn.add(
+  Number(request.receive)
+);
+
+
+/* =========================================================
+   TRANSACTION HISTORY
+   ========================================================= */
+
+var txKey =
+  "manual_transactions_" +
+  request.user_id;
+
+var transactions =
+  Bot.getProperty(txKey) ||
+  [];
+
+transactions.push({
+
+  type:
+    "WITHDRAWAL",
+
+  amount:
+    Number(request.receive),
+
+  reason:
+    request.method_name +
+    " • " +
+    request.id,
+
+  created_at:
+    Date.now()
+});
+
+Bot.setProperty(
+  txKey,
+  transactions,
+  "json"
+);
+
+
+/* =========================================================
+   CLEAR PROCESSING LOCK
+   ========================================================= */
+
+Bot.setProperty(
+  "withdraw_processing_" +
+  request.user_id,
+  "",
+  "string"
+);
+
+
+/*
+   OLD V1 REQUEST COMPATIBILITY
+   WD-1 was created before new lock system.
+*/
+
+Bot.setProperty(
+  "withdraw_last_status_" +
+  request.user_id,
+  "approved",
+  "string"
+);
+
+
+/* ---------- FORMAT ---------- */
+
+var decimals =
+  parseInt(
+    request.currency_decimals
+  );
+
+if (isNaN(decimals)) {
+  decimals = 2;
+}
+
+var symbol =
+  request.currency_symbol ||
+  "";
+
+var currencyName =
+  request.currency_name ||
+  "Points";
+
+
+/* =========================================================
+   USER NOTIFICATION
+   ========================================================= */
+
+Api.sendMessage({
+
+  chat_id:
+    request.user_id,
+
+  text:
+
+    "✅ WITHDRAWAL APPROVED\n\n" +
+
+    "Request ID: " +
+    request.id +
+    "\n\n" +
+
+    "Method: " +
+    request.method_name +
+    "\n\n" +
+
+    "Amount: " +
+    symbol +
+    Number(request.amount)
+      .toFixed(decimals) +
+    " " +
+    currencyName +
+    "\n" +
+
+    "Fee: " +
+    symbol +
+    Number(request.fee)
+      .toFixed(decimals) +
+    " " +
+    currencyName +
+    "\n" +
+
+    "Paid: " +
+    symbol +
+    Number(request.receive)
+      .toFixed(decimals) +
+    " " +
+    currencyName +
+    "\n\n" +
+
+    "Your withdrawal has been approved."
+});
+
+
+/* =========================================================
+   CHANNEL NOTIFICATION
+   NO PRIVATE PAYMENT DETAILS
+   ========================================================= */
+
+var channel =
+  Bot.getProperty(
+    "withdraw_channel"
+  );
+
+if (channel) {
+
+  var displayUser =
+    request.first_name ||
+    "User";
+
+  if (request.username) {
+
+    displayUser +=
+      " (@" +
+      request.username +
+      ")";
+  }
+
+
+  Api.sendMessage({
+
+    chat_id:
+      channel,
+
+    text:
+
+      "✅ WITHDRAWAL PAID\n\n" +
+
+      "👤 User: " +
+      displayUser +
+      "\n" +
+
+      "💸 Amount: " +
+      symbol +
+      Number(request.receive)
+        .toFixed(decimals) +
+      " " +
+      currencyName +
+      "\n" +
+
+      "💳 Method: " +
+      request.method_name +
+      "\n\n" +
+
+      "Status: PAID"
+  });
+}
+
+
+/* =========================================================
+   ADMIN RESULT
+   ========================================================= */
+
+Bot.sendInlineKeyboard(
+  [
+    [
+      {
+        title: "📥 Pending Requests",
+        command: "admin_withdrawals"
+      }
+    ],
+    [
+      {
+        title: "💸 Withdrawal Settings",
+        command: "admin_withdraw"
+      }
+    ],
+    [
+      {
+        title: "🏠 Admin Panel",
+        command: "admin_panel"
+      }
+    ]
+  ],
+
+  "✅ *WITHDRAWAL APPROVED*\n\n" +
+
+  "Request: `" +
+  request.id +
+  "`\n\n" +
+
+  "Payout: `" +
+  symbol +
+  Number(request.receive)
+    .toFixed(decimals) +
+  " " +
+  currencyName +
+  "`\n\n" +
+
+  "User notified successfully.\n" +
+  "Processing lock cleared."
+);
