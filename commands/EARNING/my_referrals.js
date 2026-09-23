@@ -36,7 +36,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -64,7 +64,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "🔴 *REFER & EARN UNAVAILABLE*\n\n" +
+    "🔴 REFER & EARN UNAVAILABLE\n\n" +
     "The referral system is currently disabled."
   );
 
@@ -177,7 +177,7 @@ var recentText = "";
 if (referrals.length > 0) {
 
   recentText =
-    "\n\n📋 *RECENT REFERRALS*\n";
+    "\n\n📋 RECENT REFERRALS\n";
 
   var shown = 0;
 
@@ -256,7 +256,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👥 MY REFERRALS\n\n" +
+  "👥 MY REFERRALS\n━━━━━━━━━━━━━━\n\n" +
 
   "👤 Total Referrals: `" +
   total +
