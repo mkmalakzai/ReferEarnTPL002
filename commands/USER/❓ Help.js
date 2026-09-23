@@ -72,7 +72,7 @@ Bot.sendInlineKeyboard(
 
   "❓ HELP CENTER\n\n" +
 
-  "Welcome to the Help Center.\n\n" +
+  "Everything you need to use the earning system confidently.\n\n" +
 
   "Choose a topic below to learn how the bot works."
 );
