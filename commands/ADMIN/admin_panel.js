@@ -195,23 +195,6 @@ var buttons = [
     }
   ],
 
-  [
-    {
-      title: "📢 Force Join",
-      command: "admin_forcejoin"
-    },
-    {
-      title: "⚙️ Settings",
-      command: "admin_settings"
-    }
-  ],
-
-  [
-    {
-      title: "📜 Admin Logs",
-      command: "admin_logs"
-    }
-  ]
 ];
 
 
