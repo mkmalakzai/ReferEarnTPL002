@@ -70,7 +70,7 @@ Bot.sendInlineKeyboard(
   ]
 ],
 
-  "❓ *HELP CENTER*\n\n" +
+  "❓ HELP CENTER\n\n" +
 
   "Welcome to the Help Center.\n\n" +
 
