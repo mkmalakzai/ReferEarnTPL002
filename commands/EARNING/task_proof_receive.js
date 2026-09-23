@@ -30,6 +30,22 @@ if (!taskId) {
 }
 
 
+/* ---------- BAN + DUPLICATE PENDING GUARD ---------- */
+
+if (Bot.getProperty("user_banned_" + user.telegramid) == "yes") {
+  Bot.sendMessage("🚫 ACCOUNT RESTRICTED\n\nYour access to this bot has been restricted by an administrator.");
+  return;
+}
+
+var existingProofs = Bot.getProperty("task_proofs") || [];
+for (var ep = 0; ep < existingProofs.length; ep++) {
+  if (existingProofs[ep].user_id == user.telegramid && existingProofs[ep].task_id == taskId && existingProofs[ep].status == "pending") {
+    User.setProperty("proof_task_id", null, "string");
+    Bot.sendInlineKeyboard([[{title:"📋 Back to Tasks",command:"tasks_list"}]],"⏳ PROOF ALREADY PENDING\n\nYou already have a proof submission waiting for review for this task. Please wait for an administrator decision before submitting again.");
+    return;
+  }
+}
+
 /* ---------- REQUIRE PHOTO ---------- */
 
 if (!request.photo || request.photo.length == 0) {
@@ -122,7 +138,7 @@ Bot.sendInlineKeyboard(
       }
     ]
   ],
-  "✅ *PROOF SUBMITTED*\n\n" +
+  "✅ PROOF RECEIVED\n\n" +
   "Submission ID: `" + submissionId + "`\n\n" +
-  "Your proof is now pending admin review."
+  "Your submission is safely queued for administrator review. You will be notified after a decision is made."
 );
