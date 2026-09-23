@@ -174,14 +174,8 @@ var buttons = [
   ],
 
   [
-    {
-      title: "⚙️ Withdraw Settings",
-      command: "admin_withdraw"
-    },
-    {
-      title: "💱 Currency",
-      command: "admin_currency"
-    }
+    { title: "💸 Payout Setup", command: "admin_withdraw" },
+    { title: "💱 Currency", command: "admin_currency" }
   ],
 
   [
@@ -197,11 +191,8 @@ var buttons = [
 
   [
     { title: "📡 Force Join", command: "admin_forcejoin" },
-    { title: "⚙️ Settings", command: "admin_settings" }
-  ],
-  [
     { title: "🧾 Admin Logs", command: "admin_logs" }
-  ]
+  ],
 ];
 
 
