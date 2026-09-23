@@ -156,7 +156,7 @@ if (canClaim) {
       ]
     ],
 
-    "🎁 *DAILY BONUS*\n\n" +
+    "🎁 DAILY REWARD\n\n" +
 
     (mode == "streak" ? "🔥 STREAK MODE\nClaim every 24–48 hours to keep your streak alive.\n\n" : "🕒 24-HOUR MODE\nA fresh reward unlocks every 24 hours.\n\n") +
 
@@ -218,9 +218,9 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🎁 *DAILY BONUS*\n\n" +
+  "🎁 DAILY REWARD\n\n" +
 
-  "✅ Today's bonus has already been claimed.\n\n" +
+  "🔒 Your current reward has already been claimed.\n\n" +
 
   "⏳ Next bonus in:\n" +
   "`" +
