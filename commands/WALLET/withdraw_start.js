@@ -117,8 +117,8 @@ Bot.sendInlineKeyboard(
   "Fee: `" +
   symbol + feeText + "`\n\n" +
 
-  "Enter the amount you want to withdraw.\\n\\n" +
-  "ℹ️ Review the limits and fee carefully. You will see a complete payout summary before anything is submitted."
+  "✍️ Enter the amount you want to withdraw.\n\n" +
+  "🛡 Review the limits and fee carefully. A complete payout summary will appear before submission."
 );
 
 
