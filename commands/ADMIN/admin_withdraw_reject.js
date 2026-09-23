@@ -292,7 +292,7 @@ Api.sendMessage({
 
   text:
 
-    "❌ WITHDRAWAL REJECTED\n\n" +
+    "❌ PAYOUT NOT APPROVED\n\nYour withdrawal request was reviewed but could not be approved. The reserved amount has been returned to your wallet.\n\n" +
 
     "Request ID: " +
     request.id +
