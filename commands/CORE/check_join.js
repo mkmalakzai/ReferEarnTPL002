@@ -30,7 +30,7 @@ if (!channels || channels.length == 0) {
 }
 
 var text =
-  "🔐 MEMBERSHIP REQUIRED\n\n" +
+  "🔐 MEMBERSHIP REQUIRED\n━━━━━━━━━━━━━━\n\n" +
   "Join all official channels below to unlock earning features and continue securely.\n\n" +
   "When finished, tap ✅ Check Joined.";
 
