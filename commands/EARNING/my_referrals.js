@@ -256,7 +256,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👥 *MY REFERRALS*\n\n" +
+  "👥 MY REFERRALS\n\n" +
 
   "👤 Total Referrals: `" +
   total +
