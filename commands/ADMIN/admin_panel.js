@@ -119,7 +119,7 @@ var roleText =
 
 
 var text =
-  "🛡 ADMIN PANEL\n\n" +
+  "🛡 CONTROL CENTER\n\n" +
 
   "Role: " +
   roleText +
@@ -131,7 +131,7 @@ var text =
   "\n📢 Force Join Channels: " +
   forceChannels.length +
 
-  "\n\nChoose a section below 👇";
+  "\n\nManage your earning platform from one place. Choose a section below 👇";
 
 
 /* =========================================================
@@ -195,6 +195,13 @@ var buttons = [
     }
   ],
 
+  [
+    { title: "📡 Force Join", command: "admin_forcejoin" },
+    { title: "⚙️ Settings", command: "admin_settings" }
+  ],
+  [
+    { title: "🧾 Admin Logs", command: "admin_logs" }
+  ]
 ];
 
 
