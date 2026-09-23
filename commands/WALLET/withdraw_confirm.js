@@ -33,7 +33,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -55,7 +55,7 @@ if (!method || !method.enabled) {
         }
       ]
     ],
-    "🔴 *WITHDRAWALS UNAVAILABLE*\n\n" +
+    "🔴 WITHDRAWALS UNAVAILABLE\n\n" +
     "Withdrawals are currently disabled."
   );
 
@@ -95,7 +95,7 @@ if (
       ]
     ],
 
-    "⚠️ *WITHDRAWAL SESSION EXPIRED*\n\n" +
+    "⚠️ WITHDRAWAL SESSION EXPIRED\n\n" +
     "Please start again."
   );
 
@@ -129,7 +129,7 @@ if (
       ]
     ],
 
-    "⚠️ *WITHDRAWAL LIMIT CHANGED*\n\n" +
+    "⚠️ WITHDRAWAL LIMIT CHANGED\n\n" +
     "Please start the withdrawal again."
   );
 
@@ -164,7 +164,7 @@ if (processing) {
       ]
     ],
 
-    "⏳ *WITHDRAWAL ALREADY PENDING*\n\n" +
+    "⏳ WITHDRAWAL ALREADY PENDING\n\n" +
     "Request ID: `" +
     processing +
     "`\n\n" +
@@ -199,7 +199,7 @@ if (amount > balance) {
       ]
     ],
 
-    "❌ *INSUFFICIENT BALANCE*\n\n" +
+    "❌ INSUFFICIENT BALANCE\n\n" +
     "Your balance is no longer enough for this withdrawal."
   );
 
@@ -227,7 +227,7 @@ if (receive <= 0) {
       ]
     ],
 
-    "❌ *INVALID WITHDRAWAL*\n\n" +
+    "❌ INVALID WITHDRAWAL\n\n" +
     "Withdrawal amount must be greater than the fee."
   );
 
@@ -418,7 +418,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "⏳ *WITHDRAWAL PENDING*\n\n" +
+  "🟡 WITHDRAWAL SUBMITTED\n━━━━━━━━━━━━━━\n\n" +
 
   "Request ID: `" +
   withdrawId +
