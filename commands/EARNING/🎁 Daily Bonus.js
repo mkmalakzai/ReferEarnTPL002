@@ -106,13 +106,12 @@ var cooldown =
 var canClaim = true;
 var remaining = 0;
 
+/* Both modes use the same 24-hour claim cooldown. */
+
 
 /* ---------- 24H CHECK ---------- */
 
-if (
-  mode == "24h" &&
-  lastClaim > 0
-) {
+if (lastClaim > 0) {
 
   var passed =
     now - lastClaim;
