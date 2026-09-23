@@ -100,9 +100,9 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "💸 *WITHDRAW*\n\n" +
+  "💸 WITHDRAWAL CENTER\n━━━━━━━━━━━━━━\n\n" +
 
-  "Method: `" + method.name + "`\n\n" +
+  "🏦 Method: " + method.name + "\n\n" +
 
   "💰 Balance: `" +
   symbol + balanceText + " " +
