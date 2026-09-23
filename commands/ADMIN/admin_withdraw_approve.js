@@ -302,7 +302,7 @@ Api.sendMessage({
 
   text:
 
-    "✅ WITHDRAWAL APPROVED\n\n" +
+    "✅ PAYOUT APPROVED\n\nYour withdrawal request has been reviewed and approved successfully.\n\n" +
 
     "Request ID: " +
     request.id +

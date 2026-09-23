@@ -456,7 +456,10 @@ Bot.sendInlineKeyboard(
   currencyName +
   "`\n\n" +
 
-  "Your balance has been reserved until the request is reviewed."
+  "🔒 The requested amount is reserved while this request is pending.\\n\\n" +
+  "✅ If approved, the payout will be marked completed.\\n" +
+  "↩️ If rejected, the full reserved amount will automatically return to your wallet.\\n\\n" +
+  "Please keep your Request ID for reference."
 );
 
 

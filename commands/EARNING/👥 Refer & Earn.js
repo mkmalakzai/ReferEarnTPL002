@@ -74,7 +74,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "👥 *REFER & EARN*\n\n" +
+    "👥 REFER & EARN\n\n" +
     "🔴 Refer & Earn is currently unavailable."
   );
 
@@ -176,54 +176,51 @@ var referralEarned = Number(
 
 Bot.sendInlineKeyboard(
   [
-  [
-    {
-      title: "📤 Share Referral Link",
-      url:
-        "https://t.me/share/url?url=" +
-        encodeURIComponent(referralLink)
-    }
+    [
+      {
+        title: "📤 Share Referral Link",
+        url:
+          "https://t.me/share/url?url=" +
+          encodeURIComponent(referralLink)
+      }
+    ],
+    [
+      {
+        title: "👥 My Referrals",
+        command: "my_referrals"
+      },
+      {
+        title: "🏆 Top Referrals",
+        command: "top_referrals"
+      }
+    ],
+    [
+      {
+        title: "🏠 Main Menu",
+        command: "main_menu"
+      }
+    ]
   ],
-  [
-    {
-      title: "👥 My Referrals",
-      command: "my_referrals"
-    },
-    {
-      title: "🏆 Top Referrals",
-      command: "top_referrals"
-    }
-  ],
-  [
-    {
-      title: "🏠 Main Menu",
-      command: "main_menu"
-    }
-  ]
-],
 
-  "👥 *REFER & EARN*\n\n" +
-
-  "Invite friends and earn `" +
+  "👥 REFER & EARN\n\n" +
+  "Invite friends, grow the community and earn rewards for every verified referral.\n\n" +
+  "🎁 Reward per successful referral: " +
   symbol +
   reward.toFixed(decimals) +
   " " +
   currencyName +
-  "` for every successful referral.\n\n" +
-
-  "🔗 *Your Referral Link:*\n" +
-  "`" + referralLink + "`\n\n" +
-
-  "👥 Successful Referrals: `" +
+  "\n\n" +
+  "🔗 Your Referral Link:\n" +
+  referralLink +
+  "\n\n" +
+  "👥 Successful Referrals: " +
   referrals +
-  "`\n" +
-
-  "💰 Referral Earnings: `" +
+  "\n" +
+  "💰 Referral Earnings: " +
   symbol +
   referralEarned.toFixed(decimals) +
   " " +
   currencyName +
-  "`\n\n" +
-
-  "ℹ️ Your reward is credited after your referral completes the required channel join."
+  "\n\n" +
+  "🛡 Rewards are credited only after the invited user completes the required channel verification."
 );

@@ -21,9 +21,9 @@ CMD*/
    COMMAND: main_menu
    ========================================================= */
 
-var banned = User.getProperty("is_banned");
+var banned = Bot.getProperty("user_banned_" + user.telegramid) == "yes";
 
-if (banned == true) {
+if (banned) {
   Bot.sendMessage("🚫 *Your account is restricted.*");
   return;
 }
@@ -36,6 +36,8 @@ var buttons =
 
 Bot.sendKeyboard(
   buttons,
-  "🏠 *MAIN MENU*\n\n" +
-  "Welcome! Choose an option below 👇"
+  "✨ EARNING HUB\n\n" +
+  "Welcome back, " + (user.first_name || "User") + "! 👋\n\n" +
+  "Complete tasks, collect rewards, invite friends and manage your earnings — all from one place.\n\n" +
+  "Choose where you want to go 👇"
 );

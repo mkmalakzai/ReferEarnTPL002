@@ -188,7 +188,7 @@ if (availableCount == 0) {
       ]
     ],
 
-    "💰 *EARN REWARDS*\n\n" +
+    "💰 EARN REWARDS\n\n" +
     "🎉 You've completed all currently available tasks.\n\n" +
     "Check again later for new tasks."
   );
@@ -227,9 +227,9 @@ buttons.push([
 Bot.sendInlineKeyboard(
   buttons,
 
-  "💰 *EARN REWARDS*\n\n" +
+  "💰 EARN REWARDS\n\n" +
   "Available Tasks: `" +
   availableCount +
   "`\n\n" +
-  "Complete a task below to earn rewards 👇"
+  "Choose a verified opportunity below, complete the requirement and collect your reward 👇"
 );

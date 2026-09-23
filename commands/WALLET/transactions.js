@@ -151,7 +151,7 @@ if (transactions.length == 0) {
       ]
     ],
 
-    "📜 *TRANSACTION HISTORY*\n\n" +
+    "📜 TRANSACTION HISTORY\n\n" +
     "No transactions yet."
   );
 
@@ -165,7 +165,7 @@ if (transactions.length == 0) {
    --------------------------------------------------------- */
 
 var text =
-  "📜 *TRANSACTION HISTORY*\n\n";
+  "📜 TRANSACTION HISTORY\n\n";
 
 var limit = transactions.length;
 

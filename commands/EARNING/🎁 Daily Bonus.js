@@ -58,7 +58,7 @@ if (enabled !== true) {
       ]
     ],
 
-    "🎁 *DAILY BONUS*\n\n" +
+    "🎁 DAILY REWARD\n\n" +
     "Daily Bonus is currently unavailable."
   );
 
@@ -106,13 +106,12 @@ var cooldown =
 var canClaim = true;
 var remaining = 0;
 
+/* Both modes use the same 24-hour claim cooldown. */
+
 
 /* ---------- 24H CHECK ---------- */
 
-if (
-  mode == "24h" &&
-  lastClaim > 0
-) {
+if (lastClaim > 0) {
 
   var passed =
     now - lastClaim;
@@ -157,7 +156,9 @@ if (canClaim) {
       ]
     ],
 
-    "🎁 *DAILY BONUS*\n\n" +
+    "🎁 DAILY REWARD\n\n" +
+
+    (mode == "streak" ? "🔥 STREAK MODE\nClaim every 24–48 hours to keep your streak alive.\n\n" : "🕒 24-HOUR MODE\nA fresh reward unlocks every 24 hours.\n\n") +
 
     "💰 Reward: `" +
     currencySymbol +
@@ -217,9 +218,9 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🎁 *DAILY BONUS*\n\n" +
+  "🎁 DAILY REWARD\n\n" +
 
-  "✅ Today's bonus has already been claimed.\n\n" +
+  "🔒 Your current reward has already been claimed.\n\n" +
 
   "⏳ Next bonus in:\n" +
   "`" +
