@@ -151,7 +151,7 @@ if (transactions.length == 0) {
       ]
     ],
 
-    "📜 TRANSACTION HISTORY\n\n" +
+    "📜 TRANSACTION HISTORY\n━━━━━━━━━━━━━━\n\n" +
     "No transactions yet."
   );
 
@@ -232,9 +232,9 @@ for (var x = 0; x < limit; x++) {
 
   text +=
     icon +
-    " *" +
+    " " +
     title +
-    "*\n";
+    "\n";
 
   text +=
     sign +
