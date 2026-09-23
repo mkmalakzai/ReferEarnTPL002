@@ -31,9 +31,17 @@ CMD*/
 var ownerId =
   Bot.getProperty("owner_id");
 
+var hasAdminAccess = (user.telegramid == ownerId);
+if (!hasAdminAccess) {
+  var admins = Bot.getProperty("bot_admins") || [];
+  for (var ai = 0; ai < admins.length; ai++) {
+    if (admins[ai].user_id == user.telegramid) { hasAdminAccess = true; break; }
+  }
+}
+
 if (
   !ownerId ||
-  user.telegramid != ownerId
+  !hasAdminAccess
 ) {
 
   Bot.sendMessage(
@@ -84,7 +92,7 @@ var activeUsers =
    ========================================================= */
 
 var tasks =
-  Bot.getProperty("tasks") || [];
+  Bot.getProperty("earning_tasks") || [];
 
 var totalTasks =
   tasks.length;
