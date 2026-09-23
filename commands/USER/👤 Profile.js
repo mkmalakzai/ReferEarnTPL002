@@ -183,7 +183,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👤 *MY PROFILE*\n\n" +
+  "👤 MY ACCOUNT\n\nYour account, earnings and activity at a glance.\n\n" +
 
   "👤 Name: `" +
   firstName +
