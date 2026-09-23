@@ -58,7 +58,7 @@ if (enabled !== true) {
       ]
     ],
 
-    "🎁 *DAILY BONUS*\n\n" +
+    "🎁 DAILY REWARD\n\n" +
     "Daily Bonus is currently unavailable."
   );
 
@@ -157,6 +157,8 @@ if (canClaim) {
     ],
 
     "🎁 *DAILY BONUS*\n\n" +
+
+    (mode == "streak" ? "🔥 STREAK MODE\nClaim every 24–48 hours to keep your streak alive.\n\n" : "🕒 24-HOUR MODE\nA fresh reward unlocks every 24 hours.\n\n") +
 
     "💰 Reward: `" +
     currencySymbol +
