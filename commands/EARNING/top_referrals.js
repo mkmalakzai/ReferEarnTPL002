@@ -360,7 +360,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🏆 *TOP REFERRALS*\n\n" +
+  "🏆 TOP REFERRALS\n\n" +
 
   leaderboardText +
 
