@@ -99,15 +99,15 @@ if (task.verification == "manual") {
 /* ---------- TEXT ---------- */
 
 var text =
-  "📌 *" + task.title + "*\n\n";
+  "🎯 TASK DETAILS\n━━━━━━━━━━━━━━\n\n📌 " + task.title + "\n\n";
 
 if (task.description) {
   text += task.description + "\n\n";
 }
 
 text +=
-  "💰 Reward: *" + task.reward + " " + currencyName + "*\n" +
-  "🔎 Verification: *" + verification + "*\n\n" +
+  "💎 Reward: " + task.reward + " " + currencyName + "\n" +
+  "🛡 Verification: " + verification + "\n\n" +
   "Complete the task, then verify below 👇";
 
 
