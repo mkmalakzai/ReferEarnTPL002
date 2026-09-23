@@ -53,7 +53,7 @@ if (
       ]
     ],
 
-    "⚠️ *INVALID AMOUNT*\n\n" +
+    "⚠️ INVALID AMOUNT\n\n" +
     "Please enter a valid withdrawal amount."
   );
 
@@ -75,7 +75,7 @@ if (amount < Number(method.min)) {
       ]
     ],
 
-    "⚠️ *AMOUNT TOO LOW*\n\n" +
+    "⚠️ AMOUNT TOO LOW\n\n" +
     "Minimum withdrawal is `" +
     method.min +
     "`."
@@ -97,7 +97,7 @@ if (amount > Number(method.max)) {
       ]
     ],
 
-    "⚠️ *AMOUNT TOO HIGH*\n\n" +
+    "⚠️ AMOUNT TOO HIGH\n\n" +
     "Maximum withdrawal is `" +
     method.max +
     "`."
@@ -131,7 +131,7 @@ if (amount > balance) {
       ]
     ],
 
-    "❌ *INSUFFICIENT BALANCE*\n\n" +
+    "❌ INSUFFICIENT BALANCE\n\n" +
     "You don't have enough balance for this withdrawal."
   );
 
@@ -159,7 +159,7 @@ if (receive <= 0) {
       ]
     ],
 
-    "❌ *INVALID WITHDRAWAL*\n\n" +
+    "❌ INVALID WITHDRAWAL\n\n" +
     "The withdrawal amount must be greater than the fee."
   );
 

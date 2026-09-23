@@ -119,9 +119,9 @@ var roleText =
 
 
 var text =
-  "🛡 CONTROL CENTER\n\n" +
+  "🛡 ADMIN CONTROL CENTER\n━━━━━━━━━━━━━━\n\n" +
 
-  "Role: " +
+  "🔐 Access Level: " +
   roleText +
   "\n\n" +
 

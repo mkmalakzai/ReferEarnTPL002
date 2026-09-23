@@ -209,7 +209,7 @@ for (
    ========================================================= */
 
 var text =
-  "📊 BOT STATISTICS\n\n" +
+  "📊 PLATFORM OVERVIEW\n━━━━━━━━━━━━━━\n\n" +
 
   "👥 USERS\n" +
   "Total: " +

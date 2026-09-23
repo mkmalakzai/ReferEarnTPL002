@@ -37,7 +37,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -74,7 +74,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "👥 REFER & EARN\n\n" +
+    "👥 REFER & EARN\n━━━━━━━━━━━━━━\n\n" +
     "🔴 Refer & Earn is currently unavailable."
   );
 
@@ -133,7 +133,7 @@ if (!botUsername) {
       ]
     ],
 
-    "⚠️ *REFERRAL LINK ERROR*\n\n" +
+    "⚠️ REFERRAL LINK ERROR\n\n" +
     "Bot username could not be detected."
   );
 

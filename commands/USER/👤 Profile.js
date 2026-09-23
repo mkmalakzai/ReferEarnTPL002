@@ -36,7 +36,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -183,7 +183,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👤 MY ACCOUNT\n\nYour account, earnings and activity at a glance.\n\n" +
+  "👤 MY ACCOUNT\n━━━━━━━━━━━━━━\nYour account, earnings and activity at a glance.\n━━━━━━━━━━━━━━\n\n" +
 
   "👤 Name: `" +
   firstName +

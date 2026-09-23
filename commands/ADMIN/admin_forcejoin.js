@@ -16,7 +16,7 @@ if (!hasAdminAccess) {
 if (!hasAdminAccess) { Bot.sendMessage("⛔ ACCESS DENIED"); return; }
 
 var channels = Bot.getProperty("force_join_channels") || [];
-var text = "📡 FORCE JOIN CONTROL\n\nProtect earning actions by requiring membership in selected Telegram channels.\n\n";
+var text = "📡 FORCE JOIN CONTROL\n━━━━━━━━━━━━━━\n\nProtect earning actions by requiring membership in selected Telegram channels.\n\n";
 var active = 0;
 if (channels.length == 0) text += "No channels configured yet.";
 for (var i=0;i<channels.length;i++) {

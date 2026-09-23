@@ -134,7 +134,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "💸 *CONFIRM WITHDRAWAL*\n\n" +
+  "💸 CONFIRM WITHDRAWAL\n━━━━━━━━━━━━━━\n\n" +
 
   "Method: `" + method.name + "`\n\n" +
 

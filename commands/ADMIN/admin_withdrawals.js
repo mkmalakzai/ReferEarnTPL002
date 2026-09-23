@@ -64,14 +64,14 @@ buttons.push([
 if (pending == 0) {
   Bot.sendInlineKeyboard(
     buttons,
-    "📥 *PENDING WITHDRAWALS*\n\nNo pending withdrawal requests."
+    "📥 PENDING WITHDRAWALS\n━━━━━━━━━━━━━━\n\nNo pending withdrawal requests."
   );
   return;
 }
 
 Bot.sendInlineKeyboard(
   buttons,
-  "📥 *PENDING WITHDRAWALS*\n\n" +
+  "📥 PENDING WITHDRAWALS\n━━━━━━━━━━━━━━\n\n" +
   "Pending requests: `" + pending + "`\n\n" +
   "Select a request to review."
 );
