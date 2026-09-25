@@ -74,7 +74,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "👥 REFER & EARN\n━━━━━━━━━━━━━━\n\n" +
+    "👥 *REFER & EARN*\n━━━━━━━━━━━━━━\n\n" +
     "🔴 Refer & Earn is currently unavailable."
   );
 
@@ -202,21 +202,21 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👥 REFER & EARN\n\n" +
-  "Invite friends, grow the community and earn rewards for every verified referral.\n\n" +
-  "🎁 Reward per successful referral: " +
+  "👥 *REFER & EARN*\n\n" +
+  "Invite friends, grow the community, and earn for every *verified referral*.\n\n" +
+  "🎁 *Reward per referral:* " +
   symbol +
   reward.toFixed(decimals) +
   " " +
   currencyName +
   "\n\n" +
-  "🔗 Your Referral Link:\n" +
+  "🔗 *Your Referral Link:*\n" +
   referralLink +
   "\n\n" +
-  "👥 Successful Referrals: " +
+  "👥 *Successful Referrals:* " +
   referrals +
   "\n" +
-  "💰 Referral Earnings: " +
+  "💰 *Referral Earnings:* " +
   symbol +
   referralEarned.toFixed(decimals) +
   " " +
