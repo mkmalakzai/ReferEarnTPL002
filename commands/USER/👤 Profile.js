@@ -183,50 +183,50 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👤 MY ACCOUNT\n━━━━━━━━━━━━━━\nYour account, earnings and activity at a glance.\n━━━━━━━━━━━━━━\n\n" +
+  "👤 *MY ACCOUNT*\n━━━━━━━━━━━━━━\nYour account, earnings and activity at a glance.\n━━━━━━━━━━━━━━\n\n" +
 
-  "👤 Name: `" +
+  "👤 *Name:* `" +
   firstName +
   "`\n" +
 
-  "🔗 Username: `" +
+  "🔗 *Username:* `" +
   username +
   "`\n" +
 
-  "🆔 User ID: `" +
+  "🆔 *User ID:* `" +
   userId +
   "`\n\n" +
 
-  "📅 Joined: `" +
+  "📅 *Joined:* `" +
   joinedText +
   "`\n\n" +
 
-  "💰 Balance: `" +
+  "💰 *Balance:* `" +
   symbol +
   balance.toFixed(decimals) +
   " " +
   currencyName +
   "`\n" +
 
-  "📈 Total Earned: `" +
+  "📈 *Total Earned:* `" +
   symbol +
   totalEarned.toFixed(decimals) +
   " " +
   currencyName +
   "`\n" +
 
-  "💸 Total Withdrawn: `" +
+  "💸 *Total Withdrawn:* `" +
   symbol +
   totalWithdrawn.toFixed(decimals) +
   " " +
   currencyName +
   "`\n\n" +
 
-  "✅ Tasks Completed: `" +
+  "✅ *Tasks Completed:* `" +
   tasksCompleted +
   "`\n" +
 
-  "👥 Successful Referrals: `" +
+  "👥 *Successful Referrals:* `" +
   successfulReferrals +
   "`"
 );
