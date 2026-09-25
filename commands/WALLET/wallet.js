@@ -146,26 +146,24 @@ if (decimals > 8) {
 var text =
   "💳 *MY WALLET*\n━━━━━━━━━━━━━━\n\n" +
 
-  "💎 *AVAILABLE BALANCE*\n" +
+  "💎 *AVAILABLE BALANCE*\n`" +
   currencySymbol +
   balance.toFixed(decimals) +
   " " +
-  currencyName +
-  "\n\n" +
+  currencyName + "`\n\n" +
 
-  "📈 *TOTAL EARNED*\n" +
+  "📈 *TOTAL EARNED*\n`" +
   currencySymbol +
   totalEarned.toFixed(decimals) +
   " " +
   currencyName +
   "\n\n" +
 
-  "💸 *TOTAL WITHDRAWN*\n" +
+  "💸 *TOTAL WITHDRAWN*\n`" +
   currencySymbol +
   totalWithdrawn.toFixed(decimals) +
   " " +
-  currencyName +
-  "\n\n━━━━━━━━━━━━━━\n✨ Keep earning and grow your balance.";
+  currencyName + "`\n\n━━━━━━━━━━━━━━\n✨ Keep earning and grow your balance.";
 
 
 /* ---------- BUTTONS ---------- */
