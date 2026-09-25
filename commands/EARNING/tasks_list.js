@@ -188,8 +188,8 @@ if (availableCount == 0) {
       ]
     ],
 
-    "💎 EARN CENTER\n━━━━━━━━━━━━━━\n\n" +
-    "🎉 You've completed all currently available tasks.\n\n" +
+    "💎 *EARN CENTER*\n━━━━━━━━━━━━━━\n\n" +
+    "🎉 *All caught up!*\n\nYou've completed every task currently available.\n\n" +
     "Check again later for new tasks."
   );
 
@@ -227,9 +227,8 @@ buttons.push([
 Bot.sendInlineKeyboard(
   buttons,
 
-  "💰 EARN REWARDS\n\n" +
-  "📋 Available Tasks: " +
-  availableCount +
-  "\n\n" +
+  "💎 *AVAILABLE TASKS*\n━━━━━━━━━━━━━━\n\n" +
+  "📋 *Available Tasks:* `" +
+  availableCount + "`\n\n" +
   "Choose a verified opportunity below, complete the requirement and collect your reward 👇"
 );
