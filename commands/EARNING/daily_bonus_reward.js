@@ -363,7 +363,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🎉 *DAILY BONUS CLAIMED!*\n\n" +
+  "🎉 *DAILY BONUS CLAIMED!*\n━━━━━━━━━━━━━━\n\n" +
 
   "🎁 Reward: `+" +
   currencySymbol +
