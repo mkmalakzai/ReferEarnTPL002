@@ -1,4 +1,4 @@
-/*CMD
+/CMD
   command: 👥 Refer & Earn
   help: 
   need_reply: false
@@ -14,20 +14,20 @@
   KEYBOARD
   aliases: refer
   group: 
-CMD*/
+CMD/
 
-/* =========================================================
+/ =========================================================
    TPL-002 — REFER & EARN USER PAGE
    FOLDER: CORE
    COMMAND: refer
    
-   ========================================================= */
+   ========================================================= /
 
 
 
-/* =========================================================
+/ =========================================================
    BAN GUARD
-   ========================================================= */
+   ========================================================= /
 
 var banned =
   Bot.getProperty(
@@ -43,10 +43,10 @@ if (banned) {
 
   return;
 }
-/* =========================================================
+/ =========================================================
    SAVE USER PUBLIC REFERRAL PROFILE
    Used by Top Referrals
-   ========================================================= */
+   ========================================================= /
 
 Bot.setProperty(
   "referrer_profile_" + user.telegramid,
@@ -58,7 +58,7 @@ Bot.setProperty(
   "json"
 );
 
-/* ---------- STATUS ---------- */
+/ ---------- STATUS ---------- /
 
 var status = Bot.getProperty("referral_status");
 
@@ -74,7 +74,7 @@ if (status != "enabled") {
       ]
     ],
 
-    "👥 *REFER & EARN*\n━━━━━━━━━━━━━━\n\n" +
+    "👥 REFER & EARN\n━━━━━━━━━━━━━━\n\n" +
     "🔴 Refer & Earn is currently unavailable."
   );
 
@@ -82,7 +82,7 @@ if (status != "enabled") {
 }
 
 
-/* ---------- REWARD ---------- */
+/ ---------- REWARD ---------- /
 
 var reward = Number(
   Bot.getProperty("referral_reward")
@@ -93,7 +93,7 @@ if (isNaN(reward)) {
 }
 
 
-/* ---------- CURRENCY ---------- */
+/ ---------- CURRENCY ---------- /
 
 var currencyName =
   Bot.getProperty("currency_name") || "Points";
@@ -117,7 +117,7 @@ if (isNaN(decimals)) {
 }
 
 
-/* ---------- BOT USERNAME ---------- */
+/ ---------- BOT USERNAME ---------- /
 
 var botUsername = bot.name;
 
@@ -141,14 +141,14 @@ if (!botUsername) {
 }
 
 
-/* Remove @ if present */
+/ Remove @ if present /
 
 botUsername = String(botUsername)
   .replace("@", "")
   .trim();
 
 
-/* ---------- REFERRAL LINK ---------- */
+/ ---------- REFERRAL LINK ---------- /
 
 var referralLink =
   "https://t.me/" +
@@ -157,7 +157,7 @@ var referralLink =
   user.telegramid;
 
 
-/* ---------- USER STATS ---------- */
+/ ---------- USER STATS ---------- /
 
 var referrals = Number(
   Bot.getProperty(
@@ -172,7 +172,7 @@ var referralEarned = Number(
 ) || 0;
 
 
-/* ---------- PAGE ---------- */
+/ ---------- PAGE ---------- /
 
 Bot.sendInlineKeyboard(
   [
@@ -202,21 +202,21 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "👥 *REFER & EARN*\n\n" +
-  "Invite friends, grow the community, and earn for every *verified referral*.\n\n" +
-  "🎁 *Reward per referral:* " +
+  "👥 REFER & EARN\n\n" +
+  "Invite friends, grow the community, and earn for every verified referral.\n\n" +
+  "🎁 Reward per referral: " +
   symbol +
   reward.toFixed(decimals) +
   " " +
   currencyName +
   "\n\n" +
-  "🔗 *Your Referral Link:*\n" +
+  "🔗 Your Referral Link:\n" +
   referralLink +
   "\n\n" +
-  "👥 *Successful Referrals:* " +
+  "👥 Successful Referrals: " +
   referrals +
   "\n" +
-  "💰 *Referral Earnings:* " +
+  "💰 Referral Earnings: " +
   symbol +
   referralEarned.toFixed(decimals) +
   " " +
