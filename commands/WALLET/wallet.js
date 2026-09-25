@@ -1,4 +1,4 @@
-/*CMD
+/CMD
   command: wallet
   help: 
   need_reply: false
@@ -14,16 +14,16 @@
   KEYBOARD
   aliases: 
   group: 
-CMD*/
+CMD/
 
-/* =========================================================
+/ =========================================================
    TPL-002 — Professional Task & Earn Bot
    FOLDER: WALLET
    COMMAND: wallet
-   ========================================================= */
-/* =========================================================
+   ========================================================= /
+/ =========================================================
    BAN GUARD
-   ========================================================= */
+   ========================================================= /
 
 var banned =
   Bot.getProperty(
@@ -33,7 +33,7 @@ var banned =
 if (banned) {
 
   Bot.sendMessage(
-    "🚫 *ACCOUNT RESTRICTED*\n\n" +
+    "🚫 ACCOUNT RESTRICTED\n\n" +
     "Your access to this bot has been restricted by an administrator."
   );
 
@@ -50,7 +50,7 @@ var withdrawnRes =
   Libs.ResourcesLib.userRes("total_withdrawn");
 
 
-/* ---------- ONE-TIME MIGRATION ---------- */
+/ ---------- ONE-TIME MIGRATION ---------- /
 
 var migrated =
   User.getProperty("wallet_resource_migrated");
@@ -66,10 +66,10 @@ if (migrated != true) {
   var oldWithdrawn =
     parseFloat(User.getProperty("total_withdrawn")) || 0;
 
-  /*
+  /
      Only migrate when Resources are still empty.
      Prevents adding old balance multiple times.
-  */
+  /
 
   if (balanceRes.value() == 0 && oldBalance > 0) {
     balanceRes.add(oldBalance);
@@ -94,14 +94,14 @@ if (migrated != true) {
 }
 
 
-/* ---------- VALUES ---------- */
+/ ---------- VALUES ---------- /
 
 var balance = balanceRes.value();
 var totalEarned = earnedRes.value();
 var totalWithdrawn = withdrawnRes.value();
 
 
-/* ---------- CURRENCY ---------- */
+/ ---------- CURRENCY ---------- /
 
 var currencyName =
   Bot.getProperty("currency_name");
@@ -141,32 +141,32 @@ if (decimals > 8) {
 }
 
 
-/* ---------- TEXT ---------- */
+/ ---------- TEXT ---------- /
 
 var text =
-  "💳 *MY WALLET*\n━━━━━━━━━━━━━━\n\n" +
+  "💳 MY WALLET\n━━━━━━━━━━━━━━\n\n" +
 
-  "💎 *AVAILABLE BALANCE*\n`" +
+  "💎 AVAILABLE BALANCE\n" +
   currencySymbol +
   balance.toFixed(decimals) +
   " " +
-  currencyName + "`\n\n" +
+  currencyName + "\n\n" +
 
-  "📈 *TOTAL EARNED*\n`" +
+  "📈 TOTAL EARNED\n" +
   currencySymbol +
   totalEarned.toFixed(decimals) +
   " " +
   currencyName +
   "\n\n" +
 
-  "💸 *TOTAL WITHDRAWN*\n`" +
+  "💸 TOTAL WITHDRAWN\n" +
   currencySymbol +
   totalWithdrawn.toFixed(decimals) +
   " " +
-  currencyName + "`\n\n━━━━━━━━━━━━━━\n✨ Keep earning and grow your balance.";
+  currencyName + "\n\n━━━━━━━━━━━━━━\n✨ Keep earning and grow your balance.";
 
 
-/* ---------- BUTTONS ---------- */
+/ ---------- BUTTONS ---------- /
 
 var buttons = [
   [

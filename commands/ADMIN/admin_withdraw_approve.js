@@ -372,25 +372,47 @@ if (channel) {
 
     text:
 
-      "✅ WITHDRAWAL PAID\n\n" +
+      "🎉 WITHDRAWAL COMPLETED\n" +
+      "━━━━━━━━━━━━━━\n\n" +
+
+      "A payout has been successfully processed. ✅\n\n" +
 
       "👤 User: " +
       displayUser +
       "\n" +
 
-      "💸 Amount: " +
+      "🧾 Request ID: " +
+      request.id +
+      "\n" +
+
+      "🏦 Method: " +
+      request.method_name +
+      "\n" +
+
+      "💰 Requested: " +
       symbol +
-      Number(request.receive)
-        .toFixed(decimals) +
+      Number(request.amount).toFixed(decimals) +
       " " +
       currencyName +
       "\n" +
 
-      "💳 Method: " +
-      request.method_name +
+      "💸 Fee: " +
+      symbol +
+      Number(request.fee).toFixed(decimals) +
+      " " +
+      currencyName +
+      "\n" +
+
+      "✅ Paid: " +
+      symbol +
+      Number(request.receive).toFixed(decimals) +
+      " " +
+      currencyName +
       "\n\n" +
 
-      "Status: PAID"
+      "🟢 Status: PAID\n" +
+      "━━━━━━━━━━━━━━\n" +
+      "✨ Thank you for being part of our earning community."
   });
 }
 
