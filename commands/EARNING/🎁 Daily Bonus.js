@@ -58,7 +58,7 @@ if (enabled !== true) {
       ]
     ],
 
-    "🎁 DAILY REWARD\n━━━━━━━━━━━━━━\n\n" +
+    "🎁 *DAILY REWARD*\n━━━━━━━━━━━━━━\n\n" +
     "Daily Bonus is currently unavailable."
   );
 
@@ -156,16 +156,15 @@ if (canClaim) {
       ]
     ],
 
-    "🎁 DAILY REWARD\n\n" +
+    "🎁 *DAILY REWARD*\n\n" +
 
-    (mode == "streak" ? "🔥 STREAK MODE\nClaim every 24–48 hours to keep your streak alive.\n\n" : "🕒 24-HOUR MODE\nA fresh reward unlocks every 24 hours.\n\n") +
+    (mode == "streak" ? "🔥 *STREAK MODE*\nClaim every 24–48 hours to keep your streak alive.\n\n" : "🕒 *24-HOUR MODE*\nA fresh reward unlocks every 24 hours.\n\n") +
 
-    "💎 Reward: " +
+    "💎 *Reward:* `" +
     currencySymbol +
     reward +
     " " +
-    currencyName +
-    "\n\n" +
+    currencyName + "`\n\n" +
 
     "✅ Your bonus is ready!\n\n" +
     "Tap below to claim it."
@@ -218,7 +217,7 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "🎁 DAILY REWARD\n\n" +
+  "🎁 *DAILY REWARD*\n\n" +
 
   "🔒 Your current reward has already been claimed.\n\n" +
 

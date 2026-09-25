@@ -100,21 +100,21 @@ Bot.sendInlineKeyboard(
     ]
   ],
 
-  "💸 WITHDRAWAL CENTER\n━━━━━━━━━━━━━━\n\n" +
+  "💸 *WITHDRAWAL CENTER*\n━━━━━━━━━━━━━━\n\n" +
 
-  "🏦 Method: " + method.name + "\n\n" +
+  "🏦 *Method:* " + method.name + "\n\n" +
 
   "💰 Balance: `" +
   symbol + balanceText + " " +
   currencyName + "`\n\n" +
 
-  "Minimum: `" +
+  "📥 *Minimum:* `" +
   symbol + minText + "`\n" +
 
-  "Maximum: `" +
+  "📤 *Maximum:* `" +
   symbol + maxText + "`\n" +
 
-  "Fee: `" +
+  "💸 *Fee:* `" +
   symbol + feeText + "`\n\n" +
 
   "✍️ Enter the amount you want to withdraw.\n\n" +

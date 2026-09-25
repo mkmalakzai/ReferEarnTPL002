@@ -36,8 +36,8 @@ var buttons =
 
 Bot.sendKeyboard(
   buttons,
-  "✨ EARNING HUB\n━━━━━━━━━━━━━━\n\n" +
-  "Welcome back, " + (user.first_name || "User") + "! 👋\n\n" +
+  "✨ *EARNING HUB*\n━━━━━━━━━━━━━━\n\n" +
+  "Welcome back, *" + (user.first_name || "User") + "*! 👋\n\n" +
   "💎 Complete tasks & collect rewards\n👥 Invite friends & grow earnings\n💳 Track and withdraw your balance\n\n" +
   "Choose where you want to go 👇"
 );
