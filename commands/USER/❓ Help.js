@@ -70,9 +70,9 @@ Bot.sendInlineKeyboard(
   ]
 ],
 
-  "❓ HELP CENTER\n━━━━━━━━━━━━━━\n\n" +
+  "❓ *HELP CENTER*\n━━━━━━━━━━━━━━\n\n" +
 
-  "Everything you need to use the earning system confidently.\n\n" +
+  "Everything you need to use the earning system *confidently and correctly*.\n\n" +
 
   "Choose a topic below to learn how the bot works."
 );
