@@ -485,6 +485,18 @@ if (startParam) {
    FORCE JOIN
    ========================================================= */
 
+if (isNewUser) {
+  Bot.sendMessage(
+    "👋 *WELCOME, " + (user.first_name || "User") + "!*\n" +
+    "━━━━━━━━━━━━━━\n\n" +
+    "🎯 Complete simple tasks and earn rewards.\n" +
+    "👥 Invite friends and grow your earnings.\n" +
+    "🎁 Claim your Daily Bonus and build your streak.\n" +
+    "💳 Track your balance and request withdrawals.\n\n" +
+    "🔐 First, complete the quick membership check below to unlock the earning system."
+  );
+}
+
 Bot.runCommand(
   "check_join"
 );
